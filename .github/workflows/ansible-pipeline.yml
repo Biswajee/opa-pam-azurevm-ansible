@@ -8,5 +8,5 @@ jobs:
     name: playground
     runs-on: ubuntu-20.04
     steps:
-    - name: Dummy step
-      run: echo "Hey There! I am using Github workflows"
+    - name: Ansible version
+      run: ansible --version
