@@ -8,7 +8,7 @@ on:
         description: 'The tag for the image'
         required: true
         default: 'latest' 
-        type: environment
+        type: string
 
 jobs:
   build_push:
