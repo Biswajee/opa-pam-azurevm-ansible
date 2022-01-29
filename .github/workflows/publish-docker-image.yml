@@ -1,0 +1,28 @@
+name: Build & Publish Docker Image
+
+# manually trigger the docker build and publish pipeline
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'The tag for the image'
+        required: true
+        default: 'latest' 
+        type: environment
+
+jobs:
+  build_push:
+    name: Build & Push
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout biswajee/heroku-opa-server
+      uses: actions/checkout@v2
+      with:
+        repository: biswajee/heroku-opa-server
+        ref: refs/heads/master
+        path: opa-server
+
+    - name: Docker build with tag ${{ github.event.inputs.tags }}
+      run: docker build -t biswajee/heroku-opa-server:$TAGS opa-server
+      env:
+        TAGS: ${{ github.event.inputs.tags }}
