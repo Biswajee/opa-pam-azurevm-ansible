@@ -1,0 +1,12 @@
+name: Ansible pipeline
+
+# manually trigger the docker build and publish pipeline
+on: workflow_dispatch
+
+jobs:
+  playground:
+    name: playground
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Dummy step
+      run: echo "Hey There! I am using Github workflows"
