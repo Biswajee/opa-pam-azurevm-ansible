@@ -1,0 +1,13 @@
+---
+- name: Play 1
+  hosts: all
+  tasks:
+  - name: Execute date command
+    command: date
+
+---
+- name: Play 2
+  hosts: all
+  tasks:
+  - name: Execute ls command
+    command: ls -l

@@ -8,5 +8,12 @@ jobs:
     name: playground
     runs-on: ubuntu-20.04
     steps:
-    - name: Ansible version
-      run: ansible --version
+    - name: Play Ansible Playbook
+      uses: arillso/action.playbook@0.0.4
+      with:
+        playbook: ansible/playbook.yml
+        inventory: ansible/inventories/hosts.yml
+        # galaxy_file: tests/requirements.yml
+      env:
+        ANSIBLE_HOST_KEY_CHECKING: 'false'
+        ANSIBLE_DEPRECATION_WARNINGS: 'false'
