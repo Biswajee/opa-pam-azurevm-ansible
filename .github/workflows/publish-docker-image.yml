@@ -22,9 +22,6 @@ jobs:
       contents: read
       packages: write
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
     - name: Checkout biswajee/heroku-opa-server
       uses: actions/checkout@v2
       with:

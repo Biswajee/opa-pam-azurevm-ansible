@@ -8,6 +8,9 @@ jobs:
     name: playground
     runs-on: ubuntu-20.04
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
     - name: Play Ansible Playbook
       run: |
         set -ex
